@@ -74,7 +74,7 @@ def evaluate_candidates(model_reader, sent, target_pos):
 
 def main(args):
     model_param_file = args.model_file
-    model_reader = ModelReader(model_param_file)
+    model_reader = ModelReader(gpu=0, config_file=model_param_file)
     sent, target_pos = parse_input(args.inputs)
     evaluate_candidates(model_reader, sent, target_pos)
 
